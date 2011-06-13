@@ -1,0 +1,14 @@
+{
+  "name": "express-asset",
+  "description": "Add a simple asset manager to express for adding and rendering script and style elements.",
+  "version": "0.0.1",
+  "repository": {},
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "express": "*"
+    , "uglify-js": "*"
+    , "underscore": "*"
+  }
+}
