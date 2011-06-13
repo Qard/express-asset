@@ -8,10 +8,10 @@ Usage
 
 Attach the middleware to express and serve your static files however you like.
 
-  app.use(require('express-asset').middleware({
-    js_src: '/javascripts'
-    , css_src: '/stylesheets'
-  }));
+    app.use(require('express-asset').middleware({
+      js_src: '/javascripts'
+      , css_src: '/stylesheets'
+    }));
 
 This adds several functions to to the response object and to view locals;
 
@@ -34,14 +34,14 @@ Using in views
 
 All the functions attached to the response object can also be used inside a view, for example;
 
-  !!! 5
-  html(lang="en")
-    head
-      title Express-Asset
-      != stylesheets()
-    body
-      #header
-        a#title(href='/') Express-Asset
-      #content
-        != body
-      != javascripts(true)
+    !!! 5
+    html(lang="en")
+      head
+        title Express-Asset
+        != stylesheets()
+      body
+        #header
+          a#title(href='/') Express-Asset
+        #content
+          != body
+        != javascripts(true)
