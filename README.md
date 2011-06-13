@@ -6,14 +6,22 @@ Add a simple asset manager to express for adding and rendering script and style 
 Usage
 =====
 
-Attach the middleware to express and serve your static files however you like.
+Attach the middleware to express and serve your static files however you like. Then use the add functions to add new script and style content and files.
 
     app.use(require('express-asset').middleware({
       js_src: '/javascripts'
       , css_src: '/stylesheets'
     }));
 
-This adds several functions to to the response object and to view locals;
+    app.get('/', function(req, res){
+      res.addScriptFile('jquery');
+      res.addScript(function(){
+        $(document).ready(function(){
+          console.log('This jquery was written on the server and rendered with express-asset!');
+        });
+      });
+      res.render('index');
+    });
 
 Adding assets
 =============
