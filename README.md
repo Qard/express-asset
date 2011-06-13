@@ -26,8 +26,8 @@ Adding assets
 Rendering assets
 ================
 
-res.javascripts(enable minification)
-res.stylesheets()
+* res.javascripts(enable minification)
+* res.stylesheets()
 
 Using in views
 ==============
