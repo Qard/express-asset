@@ -3,20 +3,18 @@ var _ = require('underscore')
   , pro = require('uglify-js').uglify;
 
 // Provides middleware to add and render scripts.
-module.exports.middleware = function(options, js_src, css_src){
+module.exports.middleware = function(options, css_src){
   // Allow args as string.
   if (typeof options === 'string') {
     options = {
-      src: options
-      , js_src: js_src
+      js_src: options
       , css_src: css_src
     };
   }
 
   // Fallback to defaults where necessary.
   _.defaults(options, {
-    src: '/var/www/public'
-    , js_src: '/javascripts'
+    js_src: '/javascripts'
     , css_src: '/stylesheets'
   });
   
@@ -55,7 +53,9 @@ module.exports.middleware = function(options, js_src, css_src){
         // Identify remote files.
         if (opts.src.indexOf('://') >= 0) {
           opts.remote = true;
-        } else {
+        
+        // Prepend src directory, if not already present.
+        } else if (opts.src.indexOf(options[type === 'script' ? 'js_src' : 'css_src']) !== 0) {
           opts.src = options[type === 'script' ? 'js_src' : 'css_src']+'/'+opts.src;
         }
       }
