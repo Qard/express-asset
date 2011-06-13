@@ -18,10 +18,10 @@ This adds several functions to to the response object and to view locals;
 Adding assets
 =============
 
-res.addScript(string or anonymous function containing script content)
-res.addScriptFile(remote url or local filename, with or without extension)
-res.addStyle(string containing style content)
-res.addStyleFile(remote url or local filename, with or without extension)
+* res.addScript(string or anonymous function containing script content)
+* res.addScriptFile(remote url or local filename, with or without extension)
+* res.addStyle(string containing style content)
+* res.addStyleFile(remote url or local filename, with or without extension)
 
 Rendering assets
 ================
