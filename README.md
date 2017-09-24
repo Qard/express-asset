@@ -1,6 +1,8 @@
 express-asset
 =============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Qard/express-asset.svg)](https://greenkeeper.io/)
+
 Add a simple asset manager to express for adding and rendering script and style elements.
 
 Usage
